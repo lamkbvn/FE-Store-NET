@@ -6,8 +6,10 @@ import NotFound from "./pages/NotFound";
 import StorePage from "./pages/StorePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CashierPage from "./pages/CashierPage";
-import InventoryPage from "./pages/InventoryPage"; // Import InventoryPage
-import MainLayout from "./components/MainLayout"; // Import MainLayout
+import InventoryPage from "./pages/InventoryPage";
+import CustomersPage from "./pages/CustomersPage"; // Import CustomersPage
+import InvoicesPage from "./pages/InvoicesPage";     // Import InvoicesPage
+import MainLayout from "./components/MainLayout";
 
 const queryClient = new QueryClient();
 
@@ -17,12 +19,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainLayout />}> {/* Sử dụng MainLayout làm bố cục chính */}
-            <Route index element={<CashierPage />} /> {/* CashierPage là trang mặc định trong MainLayout */}
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<CashierPage />} />
             <Route path="cashier" element={<CashierPage />} />
-            <Route path="inventory" element={<InventoryPage />} /> {/* Thêm tuyến đường cho Kho hàng */}
+            <Route path="inventory" element={<InventoryPage />} />
             <Route path="store" element={<StorePage />} />
             <Route path="products/:id" element={<ProductDetailPage />} />
+            <Route path="customers" element={<CustomersPage />} /> {/* Tuyến đường mới */}
+            <Route path="invoices" element={<InvoicesPage />} />     {/* Tuyến đường mới */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Route>

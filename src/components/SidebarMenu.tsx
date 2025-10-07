@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Package, ShoppingCart } from "lucide-react";
+import { Package, ShoppingCart, Users, Receipt, Shirt } from "lucide-react"; // Thêm các icon mới
 
 interface SidebarMenuProps {
   onLinkClick?: () => void; // Dùng để đóng sidebar trên mobile khi click vào link
@@ -22,6 +22,21 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ onLinkClick }) => {
       href: "/inventory",
       icon: Package,
     },
+    {
+      name: "Sản phẩm", // Mục mới
+      href: "/store", // Trỏ đến trang StorePage hiện có
+      icon: Shirt,
+    },
+    {
+      name: "Khách hàng", // Mục mới
+      href: "/customers",
+      icon: Users,
+    },
+    {
+      name: "Hóa đơn", // Mục mới
+      href: "/invoices",
+      icon: Receipt,
+    },
   ];
 
   return (
@@ -29,10 +44,10 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ onLinkClick }) => {
       {navItems.map((item) => (
         <Button
           key={item.href}
-          variant={location.pathname === item.href ? "secondary" : "ghost"}
+          variant={location.pathname === item.href || (item.href === "/store" && location.pathname.startsWith("/products/")) ? "secondary" : "ghost"}
           className={cn(
             "justify-start",
-            location.pathname === item.href && "bg-accent text-accent-foreground"
+            (location.pathname === item.href || (item.href === "/store" && location.pathname.startsWith("/products/"))) && "bg-accent text-accent-foreground"
           )}
           asChild
           onClick={onLinkClick}
