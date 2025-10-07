@@ -11,21 +11,12 @@ const Header: React.FC = () => {
         </Link>
         <nav>
           <ul className="flex space-x-4">
+            {/* Liên kết "Bán tại quầy" đã được chuyển vào SidebarMenu */}
             {/* <li>
-              <Button variant="ghost" asChild>
-                <Link to="/">Home</Link>
-              </Button>
-            </li>
-            <li>
-              <Button variant="ghost" asChild>
-                <Link to="/store">Store</Link>
-              </Button>
-            </li> */}
-            <li>
               <Button variant="ghost" asChild>
                 <Link to="/cashier">Bán tại quầy</Link>
               </Button>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>

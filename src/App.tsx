@@ -6,7 +6,8 @@ import NotFound from "./pages/NotFound";
 import StorePage from "./pages/StorePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CashierPage from "./pages/CashierPage";
-import Header from "./components/Header";
+import InventoryPage from "./pages/InventoryPage"; // Import InventoryPage
+import MainLayout from "./components/MainLayout"; // Import MainLayout
 
 const queryClient = new QueryClient();
 
@@ -15,14 +16,16 @@ const App = () => (
     <TooltipProvider>
       <Sonner />
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<CashierPage />} /> {/* CashierPage is now the default route */}
-          <Route path="/store" element={<StorePage />} />
-          <Route path="/products/:id" element={<ProductDetailPage />} />
-          <Route path="/cashier" element={<CashierPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<MainLayout />}> {/* Sử dụng MainLayout làm bố cục chính */}
+            <Route index element={<CashierPage />} /> {/* CashierPage là trang mặc định trong MainLayout */}
+            <Route path="cashier" element={<CashierPage />} />
+            <Route path="inventory" element={<InventoryPage />} /> {/* Thêm tuyến đường cho Kho hàng */}
+            <Route path="store" element={<StorePage />} />
+            <Route path="products/:id" element={<ProductDetailPage />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
