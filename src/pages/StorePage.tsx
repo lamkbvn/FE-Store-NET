@@ -1,13 +1,13 @@
 import React from "react";
 import ProductCard from "@/components/ProductCard";
 import { products, Product } from "@/data/products";
-import { toast } from "@/utils/toast";
+import { showSuccess } from "@/utils/toast"; // Corrected import
 
 const StorePage: React.FC = () => {
   const handleAddToCart = (product: Product) => {
     // In a real application, this would add the product to a global cart state
     // For now, we'll just show a toast notification.
-    toast.success(`${product.name} added to cart!`);
+    showSuccess(`${product.name} added to cart!`); // Using the exported showSuccess function
   };
 
   return (
