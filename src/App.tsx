@@ -17,7 +17,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Sonner />
-      <BrowserRouter basename="/FE-Store-NET/"> {/* Thêm basename */}
+      <BrowserRouter> {/* Đã xóa basename */}
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<CashierPage />} />
