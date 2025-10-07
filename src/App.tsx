@@ -7,8 +7,8 @@ import StorePage from "./pages/StorePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CashierPage from "./pages/CashierPage";
 import InventoryPage from "./pages/InventoryPage";
-import CustomersPage from "./pages/CustomersPage"; // Import CustomersPage
-import InvoicesPage from "./pages/InvoicesPage";     // Import InvoicesPage
+import CustomersPage from "./pages/CustomersPage";
+import InvoicesPage from "./pages/InvoicesPage";
 import MainLayout from "./components/MainLayout";
 
 const queryClient = new QueryClient();
@@ -17,7 +17,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/FE-Store-NET/"> {/* Thêm basename */}
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<CashierPage />} />
@@ -25,8 +25,8 @@ const App = () => (
             <Route path="inventory" element={<InventoryPage />} />
             <Route path="store" element={<StorePage />} />
             <Route path="products/:id" element={<ProductDetailPage />} />
-            <Route path="customers" element={<CustomersPage />} /> {/* Tuyến đường mới */}
-            <Route path="invoices" element={<InvoicesPage />} />     {/* Tuyến đường mới */}
+            <Route path="customers" element={<CustomersPage />} />
+            <Route path="invoices" element={<InvoicesPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Route>
