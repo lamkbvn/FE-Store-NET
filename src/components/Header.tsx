@@ -11,7 +11,7 @@ const Header: React.FC = () => {
         </Link>
         <nav>
           <ul className="flex space-x-4">
-            <li>
+            {/* <li>
               <Button variant="ghost" asChild>
                 <Link to="/">Home</Link>
               </Button>
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
               <Button variant="ghost" asChild>
                 <Link to="/store">Store</Link>
               </Button>
-            </li>
+            </li> */}
             <li>
               <Button variant="ghost" asChild>
                 <Link to="/cashier">Bán tại quầy</Link>
