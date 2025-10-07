@@ -21,6 +21,11 @@ const Header: React.FC = () => {
                 <Link to="/store">Store</Link>
               </Button>
             </li>
+            <li>
+              <Button variant="ghost" asChild>
+                <Link to="/cashier">Bán tại quầy</Link>
+              </Button>
+            </li>
           </ul>
         </nav>
       </div>

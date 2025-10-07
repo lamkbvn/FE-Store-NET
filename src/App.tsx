@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import StorePage from "./pages/StorePage";
-import ProductDetailPage from "./pages/ProductDetailPage"; // Import ProductDetailPage
+import ProductDetailPage from "./pages/ProductDetailPage";
+import CashierPage from "./pages/CashierPage"; // Import CashierPage
 import Header from "./components/Header";
 
 const queryClient = new QueryClient();
@@ -19,7 +20,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/store" element={<StorePage />} />
-          <Route path="/products/:id" element={<ProductDetailPage />} /> {/* New route for product details */}
+          <Route path="/products/:id" element={<ProductDetailPage />} />
+          <Route path="/cashier" element={<CashierPage />} /> {/* New route for Cashier Page */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
