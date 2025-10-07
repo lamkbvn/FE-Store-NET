@@ -1,15 +1,15 @@
 import React from "react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import ProductCard from "@/components/ProductCard";
-import { products, Product } from "@/data/products";
-import { showSuccess } from "@/utils/toast";
+// ProductCard và các import liên quan đến sản phẩm không còn cần thiết trên trang chủ
+// import ProductCard from "@/components/ProductCard";
+// import { products, Product } from "@/data/products";
+// import { showSuccess } from "@/utils/toast";
 
 const Index = () => {
-  const handleAddToCart = (product: Product) => {
-    // Trong một ứng dụng thực tế, điều này sẽ thêm sản phẩm vào trạng thái giỏ hàng toàn cục
-    // Hiện tại, chúng ta chỉ hiển thị thông báo toast.
-    showSuccess(`${product.name} đã được thêm vào giỏ hàng!`);
-  };
+  // handleAddToCart không còn cần thiết trên trang chủ
+  // const handleAddToCart = (product: Product) => {
+  //   showSuccess(`${product.name} đã được thêm vào giỏ hàng!`);
+  // };
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-4">
@@ -22,14 +22,15 @@ const Index = () => {
         </p>
       </div>
 
-      <div className="container mx-auto">
+      {/* Phần hiển thị sản phẩm đã được loại bỏ */}
+      {/* <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8">Sản phẩm của chúng tôi</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
           ))}
         </div>
-      </div>
+      </div> */}
       <MadeWithDyad />
     </div>
   );
